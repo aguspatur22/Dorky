@@ -11,7 +11,8 @@ load_dotenv()
 def main():
     xml_content = fetch_ghdb_xml()
     entries = parse_ghdb_xml(xml_content)
-    domain = os.getenv('DOMAIN')
+    domain = os.getenv('DOMAIN', "No domain set")
+    print(f"DOMAIN: {domain}")
 
     for dork in entries:
         url = check_dork(dork)

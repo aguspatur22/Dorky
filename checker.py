@@ -39,7 +39,7 @@ def check_dork(dork):
         search_results = driver.find_elements(By.CLASS_NAME, 'g')
 
         for result in search_results:
-            if 'unlp.edu.ar' in result.text:
+            if domain in result.text:
                 driver.quit()
                 return url
 

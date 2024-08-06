@@ -5,7 +5,7 @@ def parse_ghdb_xml(xml_content):
     root = ET.fromstring(xml_content)
     entries = []
 
-    yesterday = (datetime.now() - timedelta(days=3)).strftime('%Y-%m-%d')
+    yesterday = (datetime.now() - timedelta(days=33)).strftime('%Y-%m-%d')
     print("Date of dorks: ", yesterday)
     for entry in root.findall('entry'):
         date = entry.find('date').text

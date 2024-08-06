@@ -16,10 +16,16 @@ def check_dork(dork):
     query = f"{dork} site:*.{domain}"
     url = f"https://www.google.com/search?q={query}"
 
+    agent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+
     options = uc.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument(f"user-agent={agent}")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-setuid-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+
     driver = uc.Chrome(options=options)
 
     driver.get(url)

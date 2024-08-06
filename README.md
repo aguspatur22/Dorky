@@ -35,14 +35,9 @@ This project is a Dockerized service that checks if your domain appears in Googl
    DOMAIN=yourdomain.com
    ```
 
-3. **Build the Docker image:**
+3. **Build and Run docker-compose.yml**
    ```sh
-   docker build -t dorky .
-   ```
-
-4. **Run the Docker container:**
-   ```sh
-   docker run -d --name dorky-checker dorky
+   docker compose up --build
    ```
 
 
@@ -61,13 +56,6 @@ This project is a Dockerized service that checks if your domain appears in Googl
 - Dockerfile: Docker configuration file.
 - .env: Environment variables file
 
-## Example
-
-To manually run the service, execute: 
-   ```sh
-   docker run --rm dorky
-   ```
-
 
 ## Setting Up as a Cronjob in Linux
 
@@ -80,7 +68,7 @@ To set up the Docker container to run as a cronjob once a day, follow these step
 
 2. **Add the following line to schedule the job to run daily at midnight:**
    ```sh
-   0 0 * * * docker run --rm dorky
+   0 0 * * * docker compose up --build --rm dorky
    ```
 
 3. **Save and exit the crontab editor.**

@@ -21,8 +21,8 @@ This project is a Dockerized service that checks if your domain appears in Googl
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/google-dork-domain-checker.git
-   cd google-dork-domain-checker
+   git clone https://github.com/aguspatur22/dorky.git
+   cd dorky
    ```
 
 2. **Create a .env file:**

@@ -33,6 +33,11 @@ This project is a Dockerized service that checks if your domain appears in Googl
    Add the following content to the .env file:
    ```sh
    DOMAIN=yourdomain.com
+   SMTP_SERVER=smtp.example.com
+   SMTP_PORT=587
+   EMAIL_USER=your-email@example.com
+   EMAIL_PASSWORD=your-email-password
+   RECIPIENT_EMAIL=recipient@example.com
    ```
 
 3. **Build and Run docker-compose.yml**

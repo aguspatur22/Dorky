@@ -42,8 +42,6 @@ def check_dork(dork):
             ActionChains(driver).send_keys(Keys.END).perform()
             time.sleep(2)
 
-        search_results = driver.find_elements(By.CLASS_NAME, 'g')
-
         for result in search_results:
             if domain in result.text:
                 driver.quit()
